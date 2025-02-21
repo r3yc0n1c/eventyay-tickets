@@ -36,6 +36,9 @@ jobs:
         run: |
           if [ -f CNAME ]; then cp CNAME doc/_build/html/; fi
 
+      - name: Copy CNAME to deploy directory
+        run: cp doc/CNAME doc/_build/html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
